@@ -1,0 +1,12 @@
+/* Стили для изображения */
+#carouselExampleAutoplaying .carousel-item img {
+    display: block;             /* Убирает лишние отступы вокруг изображения */
+    width: 100%;                /* Растягивает на всю ширину контейнера */
+    max-height: 600px;             /* Заполняет всю высоту блока */
+    object-fit: cover;          /* Обрезает изображение, сохраняя пропорции */
+    margin: 0 auto;             /* Центрирует по горизонтали */
+    border-radius: 20px;        /* Скругление краев изображения */
+    position: static;           /* Возвращает позиционирование к обычному */
+}
+
+.cursor-pointer { cursor: pointer; }

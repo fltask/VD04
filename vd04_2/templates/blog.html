@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИТ Новости</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.min.css') }}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NEWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="/">Главная</a>
+                    <a class="nav-link active" href="/blog/">Новости</a>
+                    <a class="nav-link" href="/contacts/">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container py-4">
+        <!-- Секция с карточками -->
+        <section class="mb-5">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Карточка 1 -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="{{ url_for('static', filename='img/ai_tux_700.jpg') }}"
+                                 class="card-img-top" alt="Торвальдс и Rust">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">«Отец» Linux ополчился на главного фаната языка Rust</h5>
+                            <p class="card-text">Громкий скандал в мире Linux с участием Линуса Торвальдса.</p>
+                        </div>
+                        <div class="card-footer d-grid gap-2">
+                            <a class="btn btn-primary" data-bs-toggle="collapse"
+                               href="#flush-collapseOne"
+                               role="button"
+                               aria-expanded="false"
+                               aria-controls="flush-collapseOne"
+                               rel="noopener noreferrer">
+                                Подробнее
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="{{ url_for('static', filename='img/pasport.jpg') }}"
+                                 class="card-img-top" alt="Паспорт">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Суверенный мессенджер вместо паспорта</h5>
+                            <p class="card-text">В России создается суверенный мессенджер, который может заменить
+                                паспорт</p>
+                        </div>
+                        <div class="card-footer d-grid gap-2">
+                            <a class="btn btn-primary" data-bs-toggle="collapse"
+                               href="#flush-collapseTwo"
+                               role="button"
+                               aria-expanded="false"
+                               aria-controls="flush-collapseTwo"
+                               rel="noopener noreferrer">
+                                Подробнее
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="{{ url_for('static', filename='img/dbms.jpg') }}"
+                                 class="card-img-top" alt="dbms.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Чем заменить западную СУБД?</h5>
+                            <p class="card-text">Кейс Национального клирингового центра «Московской биржи»</p>
+                        </div>
+                        <div class="card-footer d-grid gap-2">
+                            <a class="btn btn-primary" data-bs-toggle="collapse"
+                               href="#flush-collapseThree"
+                               role="button"
+                               aria-expanded="false"
+                               aria-controls="flush-collapseThree"
+                               rel="noopener noreferrer">
+                                Подробнее
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция аккордеон -->
+        <section class="mb-5">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed text-bg-primary" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                aria-expanded="false" aria-controls="flush-collapseOne">
+                            «Отец» Linux ополчился на главного фаната языка Rust за подлог и обман. Наказание –
+                            незамедлительная блокировка
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"
+                             id="accordion-body-1"
+                             data-content-url="{{ url_for('static', filename='content/accordion1.html') }}">
+                            <!-- изначально пусто — сюда загрузится accordion1.html -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed text-bg-primary" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                aria-expanded="false" aria-controls="flush-collapseTwo">
+                            В России создается суверенный мессенджер, который может заменить паспорт
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                         aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"
+                             id="accordion-body-2"
+                             data-content-url="{{ url_for('static', filename='content/accordion2.html') }}">
+                            <!-- изначально пусто — сюда загрузится accordion2.html -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed text-bg-primary" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                aria-expanded="false" aria-controls="flush-collapseThree">
+                            Чем заменить западную СУБД?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                         aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"
+                             id="accordion-body-3"
+                             data-content-url="{{ url_for('static', filename='content/accordion3.html') }}">
+                            <!-- изначально пусто — сюда загрузится accordion3.html -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/accordion-loader.js') }}"></script>
+</body>
+</html>

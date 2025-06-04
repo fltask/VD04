@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.min.css') }}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NEWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                    <a class="nav-link" href="/blog/">Новости</a>
+                    <a class="nav-link" href="/contacts/">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container py-4">
+
+        <!-- Секция с фото -->
+        <section class="mb-5">
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0"
+                            class="active"
+                            aria-label="Slide 1" aria-current="true"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <a href="{{ url_for('blog') }}">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='img/ai_tux_700.jpg') }}"
+                                 class="d-block w-100 cursor-pointer"
+                                 alt="Линус Торвальдс">
+
+                            <div class="carousel-caption d-none d-md-block
+                                    bg-dark bg-opacity-50
+                                    border border-light
+                                    rounded p-3
+                                    text-white">
+                                <h5>«Отец» Linux ополчился на главного фаната языка Rust</h5>
+                                <p>В стане Linux очередной громкий скандал, и снова Торвальдс в его эпицентре</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='img/pasport.jpg') }}"
+                                 class="d-block w-100 cursor-pointer" alt="Паспорт и мессенджер">
+                            <div class="carousel-caption d-none d-md-block
+                                    bg-dark bg-opacity-50
+                                    border border-light
+                                    rounded p-3
+                                    text-white">
+                                <h5>Суверенный мессенджер вместо паспорта</h5>
+                                <p>В Госдуму внесён законопроект о «многофункциональном сервисе обмена информацией»</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='img/dbms.jpg') }}"
+                                 class="d-block w-100 cursor-pointer" alt="СУБД">
+                            <div class="carousel-caption d-none d-md-block
+                                    bg-dark bg-opacity-50
+                                    border border-light
+                                    rounded p-3
+                                    text-white">
+                                <h5>Чем заменить западную СУБД?</h5>
+                                <p>Кейс НКЦ «Московской биржи»</p>
+                            </div>
+                        </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+</html>
