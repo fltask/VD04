@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Текущее время (SSE)</title>
+  <style>
+    .data { font-size: 2rem; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <div class="data">Текущие дата и время:<br><br>
+    <span id="clock">Загрузка…</span></div>
+  <script>
+    const es = new EventSource("/stream-time");
+    es.onmessage = e => {
+      document.getElementById("clock").textContent = e.data;
+    };
+  </script>
+</body>
+</html>
